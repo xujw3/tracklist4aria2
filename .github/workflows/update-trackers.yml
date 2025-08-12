@@ -9,6 +9,10 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    # VVVV  添加这个权限块以解决 403 错误  VVVV
+    permissions:
+      contents: write
+    # ^^^^  Add this permissions block to fix the 403 error  ^^^^
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
