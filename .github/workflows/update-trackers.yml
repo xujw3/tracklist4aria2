@@ -19,19 +19,19 @@ jobs:
 
       - name: Update best.txt
         run: |
-          curl -sS https://cf.trackerslist.com/best.txt | sed '/^$/d' | tr '\n' ',' | sed 's/,$//' > best_processed.txt
+          curl -sS https://cf.trackerslist.com/best.txt | sed '/^$/d' | tr '\n' ',' | sed 's/,$//' > best.txt
 
       - name: Update all.txt
         run: |
-          curl -sS https://cf.trackerslist.com/all.txt | sed '/^$/d' | tr '\n' ',' | sed 's/,$//' > all_processed.txt
+          curl -sS https://cf.trackerslist.com/all.txt | sed '/^$/d' | tr '\n' ',' | sed 's/,$//' > all.txt
 
       - name: Update http.txt
         run: |
-          curl -sS https://cf.trackerslist.com/http.txt | sed '/^$/d' | tr '\n' ',' | sed 's/,$//' > http_processed.txt
+          curl -sS https://cf.trackerslist.com/http.txt | sed '/^$/d' | tr '\n' ',' | sed 's/,$//' > http.txt
 
       - name: Update nohttp.txt
         run: |
-          curl -sS https://cf.trackerslist.com/nohttp.txt | sed '/^$/d' | tr '\n' ',' | sed 's/,$//' > nohttp_processed.txt
+          curl -sS https://cf.trackerslist.com/nohttp.txt | sed '/^$/d' | tr '\n' ',' | sed 's/,$//' > nohttp.txt
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
